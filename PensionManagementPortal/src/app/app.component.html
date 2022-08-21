@@ -1,0 +1,57 @@
+<!-- Navigation bar at the top-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-color">
+  <div class="container-fluid">
+    <a class="navbar-brand" (click)="reloadPage()">Pension Management Portal</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto">
+        <div *ngIf="isLoggedIn()">
+          <li class="nav-item">
+            <a class="nav-link" 
+            routerLink="home" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+             aria-current="page"><i
+                class="fas fa-home">&nbsp;</i>Home</a>
+          </li>
+        </div>
+
+        <div *ngIf="isLoggedIn()">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="pension-details"
+            routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+              Process Pension</a>
+          </li>
+        </div>
+      </ul>
+
+      <ul class="navbar-nav">
+        <div *ngIf="isLoggedIn()">
+          <li class="nav-item">
+            <button class="nav-link btn btn-property" style="color: black;"
+             (click)="logout()"><i class="fas fa-sign-out-alt">&nbsp;</i>Logout
+            </button>
+          </li>
+        </div>
+      </ul>
+      
+    </div>
+  </div>
+</nav> <!-- End of header navbar  -->
+
+
+  <!-- All the component routed data goes here -->
+  <router-outlet></router-outlet>
+
+  <!-- Footer-->
+  <footer class="fixed-bottom bg-color" *ngIf="!isLoggedIn()">
+    <div class="container">
+      <h6 class="text-center text-white">
+        <b>
+        This portal has been developed and is maintained by Abhishek Kumar
+      </b>
+    </h6>
+    </div>
+  </footer>

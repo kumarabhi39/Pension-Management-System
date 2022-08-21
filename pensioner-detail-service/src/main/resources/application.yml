@@ -1,0 +1,18 @@
+# server properties
+server:
+ port: 8083
+ servlet:
+   context-path: /api/pensioner-detail
+
+# spring properties below
+spring:
+  application:
+    name: PENSIONER-DETAIL-SERVICE
+
+# Error Messages
+errorMessage: Aadhaar Number Not Found
+
+logging:
+ level:
+    '[org.springframework.web]': ERROR
+    '[com.cts.pensionerDetails]': DEBUG

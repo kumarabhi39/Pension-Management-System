@@ -1,0 +1,22 @@
+.container-body{
+    height: 695px;
+    color: #fff;
+    background: url("../../../assets/images/404.jpg") no-repeat center center fixed; 
+    background-size: 100%;
+    background-size: cover;    
+}
+
+.bg-color {
+    background-color: lightseagreen;
+    color: black;
+    font-weight: bolder;
+}
+
+.bg-color:hover {
+    background-color: black;
+    color: white;
+}
+
+.text-center {
+    text-align: center;
+  }

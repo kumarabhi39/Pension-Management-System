@@ -1,0 +1,16 @@
+.container-body{
+    height: 695px;
+    color: #fff;
+    background: url("../../../assets/images/pension-details.jpg") no-repeat center center fixed; 
+    background-size: 100%;
+    background-size: cover;    
+}
+
+.date-input{
+    margin-top: 0%;
+    width: 100%;
+}
+
+.break-div{
+    white-space: pre-line;
+}

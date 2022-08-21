@@ -1,0 +1,90 @@
+<div class="container-body">
+    <br>
+    <h2 class="text-center" style="color: black; font-weight: bolder;">
+        Submit your details below for getting the pension processed!
+    </h2>
+    <div class="outer-div col-lg-6 offset-lg-3">
+    <form #pensionForm='ngForm' (ngSubmit)='handlePensionerInput(); pensionForm.resetForm()' class="px-3">
+       
+        <!-- Aadhaar Number -->
+        <div class="form-group mt-2">
+            <label for="aadhaar-number"><strong>Aadhaar Number<span class="text-danger">*</span></strong></label>
+            <input type="text" class="form-control mt-1" id="aadhaar-number" name="aadhaar" #aadhaar=ngModel
+                [(ngModel)]='pensionerInput.aadhaarNumber' pattern="^[0-9]{12}$"
+                placeholder="Enter the 12 digit Aadhaar number" required />
+            <!-- Validations -->
+            <div *ngIf="aadhaar.invalid && (aadhaar.dirty || aadhaar.touched)" class="text-error">
+                <div *ngIf="aadhaar.errors?.required">
+                    Aadhaar Number is required
+                </div>
+                <div *ngIf="aadhaar.errors?.pattern">
+                    Aadhaar Number format is incorrect
+                </div>
+            </div>
+        </div> <!-- Aadhaar ends here -->
+
+        <!-- Name -->
+        <div class="form-group mt-2">
+            <label for="name"><strong>Name<span class="text-danger">*</span></strong></label>
+            <input type="text" class="form-control mt-1" id="name" name="name" #name=ngModel
+                [(ngModel)]='pensionerInput.name' placeholder="Enter the pensioner name" required />
+        </div>
+        <!-- Validations -->
+        <div *ngIf="name.invalid && (name.dirty || name.touched)" class="text-error">
+            <div *ngIf="name.errors?.required">
+                Username is required
+            </div>
+        </div> <!-- Name ends here -->
+
+        <!-- DOB -->
+        <div class="form-group mt-2">
+        <label for="dob"><strong>Date of Birth<span class="text-danger">*</span></strong></label>
+            <input type="date" name="dob" #dob=ngModel class="form-control date-input mt-1"
+                [(ngModel)]="pensionerInput.dateOfBirth"
+                placeholder="DD/MM/YYYY" required />
+        </div>
+                
+            <!-- Validations -->
+            <div *ngIf="dob.invalid && (dob.dirty || dob.touched)" class="text-error">
+                <div *ngIf="dob.errors?.required">
+                    Date of Birth is required
+                </div>
+            </div> <!-- DOB ends here -->
+
+        <!-- PAN Card Number -->
+        <div class="form-group mt-2">
+            <label for="pan"><strong>PAN<span class="text-danger">*</span></strong></label>
+            <input type="text" class="form-control mt-1" id="pan" name="pan" #pan=ngModel
+                [(ngModel)]='pensionerInput.pan' pattern="^[A-Za-z0-9]{10}$"
+                placeholder="Enter the 10 digit PAN" required />
+            <!-- Validations -->
+            <div *ngIf="pan.invalid && (pan.dirty || pan.touched)" class="text-error">
+                <div *ngIf="pan.errors?.required">
+                    PAN Card Number is required
+                </div>
+                <div *ngIf="pan.errors?.pattern">
+                    PAN Card format is incorrect
+                </div>
+            </div>
+        </div> <!-- PAN ends here -->
+        
+        <!-- Handle login and reset -->
+        <div class="text-center">
+            <button class="btn btn-primary mt-3 mx-3" [disabled]="!pensionForm.valid">Submit</button>
+            <button type="reset" class="btn btn-secondary mt-3" (click)="handleReset()">Reset</button>
+        </div><!-- Login ends here -->
+
+        <!-- Error messages -->
+        <div class="text-error text-center mt-3" (mouseleave)="handleReset()">
+            <div *ngFor='let error of fieldErrors'>
+                <p>{{ error }}</p>
+            </div>
+        </div>
+    </form> <!-- Form ends here -->
+</div>
+
+<!-- Success Message -->
+<div class="container col-lg-7">
+<h2 [ngClass]="color" class="break-div mt-3 text-center bg-dark" (mouseleave)="handleReset()">{{ msg }}</h2>
+</div>
+</div>

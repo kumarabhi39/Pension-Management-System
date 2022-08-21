@@ -1,0 +1,36 @@
+# server properties
+server:
+  port: 8082
+  servlet:
+    context-path: /api/process-pension
+
+# spring properties
+spring:
+  application:
+    name: PROCESS-PENSION-SERVICE 
+  jackson:
+    date-format: yyyy-MM-dd
+    time-zone: IST
+    
+    
+# Configure Database here
+  datasource:
+    url: jdbc:h2:mem:process_pension_db
+    username: abhishek
+    password: abhishekpass
+    driver-class-name: org.h2.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create
+    database-platform: org.hibernate.dialect.H2Dialect
+    show-sql: true
+  h2:
+   console:
+     enabled: true
+     settings:
+       web-allow-others: true
+      
+logging:
+  level:
+    '[org.springframework.web]': ERROR
+    '[com.cts.processPension]': DEBUG       

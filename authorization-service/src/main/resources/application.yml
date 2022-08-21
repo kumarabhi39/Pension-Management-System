@@ -1,0 +1,51 @@
+# server properties
+server:
+  port: 8081
+  servlet:
+     context-path: /api/auth
+  
+# Secret Key To Generate Token
+app:
+  secretKey: '[@q2Xg7@T4mOplFu#Ae]'
+  jwtValidityMinutes: 15
+  
+# spring properties
+spring:
+  application:
+    name: AUTH-SERVICE
+    
+# Configure Database here
+  datasource:
+    url: jdbc:h2:mem:authentication_db
+    username: abhishek
+    password: abhishekpass
+    driver-class-name: org.h2.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create
+    database-platform: org.hibernate.dialect.H2Dialect
+    show-sql: false
+  h2:
+   console:
+     enabled: true
+     settings:
+       web-allow-others: true
+      
+# Error Messages
+jwtUtil:
+  expiredMessage: Token has been expired
+  malformedMessage: Token is in invalid format
+  signatureMessage: Token signature is invalid
+  nullOrEmptyMessage: Token is either null or empty
+  unsupportedMessage: Claims for token is not supported
+  
+userDetails:
+  errorMessage: Incorrect Username or Password
+  badCredentialsMessage: Incorrect Username or Password
+  disabledAccountMessage: Your account has been disabled
+  lockedAccountMessage: You account has been locked, please contact your administrator for more details
+  
+logging:
+ level:
+    '[org.springframework.web]': ERROR
+    '[com.cts.authorization]': DEBUG       

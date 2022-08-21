@@ -1,0 +1,22 @@
+.container-body{
+    height: 696.5px;
+    color: #fff;
+    background-image: url("../../../assets/images/login.jpg");
+    background-size: 100%;  
+    background-size: cover;
+}
+
+.bg-color {
+    background-color: lightseagreen;
+    color: black;
+    font-weight: bolder;
+}
+
+.bg-color:hover {
+    background-color: black;
+    color: white;
+}
+
+.text-center{
+    text-align: center;
+}

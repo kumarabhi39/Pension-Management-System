@@ -1,0 +1,33 @@
+.container-body{
+    height: 695px;
+    color: #fff;
+    background: url("../../../assets/images/home.jpg") no-repeat center center fixed; 
+    background-size: 100%;
+    background-size: cover;    
+}
+
+.bg-color {
+    background-color: darkgreen;
+    color: white;
+    font-weight: bolder;
+}
+
+.bg-color:hover {
+    background-color: black;
+}
+
+.title{
+    color: black;
+    text-shadow: 1px 1px 1px antiquewhite;
+    margin-bottom: 0.3em;
+    font-weight: bolder;
+}
+
+.text-center{
+    text-align: center;
+}
+
+h3 span{
+    background-color: skyblue;
+    line-height: 28pt;
+}

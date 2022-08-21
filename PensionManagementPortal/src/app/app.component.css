@@ -1,0 +1,15 @@
+.bg-color{
+    background-color: black
+}
+
+.btn-property{
+    background-color: red;
+}
+
+.btn-property:hover{
+    background-color: crimson;
+}
+
+a:hover{
+    cursor: pointer;
+}
