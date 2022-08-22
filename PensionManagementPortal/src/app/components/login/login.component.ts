@@ -48,7 +48,7 @@ export class LoginComponent implements OnInit {
           try {
             this.fieldErrors = JSON.parse(error.error).fieldErrors;
           } catch (error) {
-            this.msg = "Service is down, please try again later..."
+            this.msg = "Service is down, please try again later!"
             console.log(this.msg);
           }
         }

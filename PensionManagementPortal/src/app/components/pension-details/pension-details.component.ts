@@ -20,7 +20,6 @@ export class PensionDetailsComponent implements OnInit {
   msg: string = ''
   color: String = ''
   fieldErrors: string[] = []
-  types = ["Self", "Family"]
 
   ngOnInit(): void {
   }
