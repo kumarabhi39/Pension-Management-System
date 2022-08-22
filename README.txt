@@ -4,6 +4,16 @@ Submitted by:-
 ABHISHEK KUMAR
 (abhishekkrsinha39@gmail.com)
 
+The technologies used are as follows:-
+
+1. Front End: Angular
+2. Back End: Java, Spring Boot, REST, JUnit.
+3. Database: H2-database
+4. Tools: Eclipse IDE, Postman, Visual studio code
+5. Cloud: AWS
+
+--------------------------------------------------------------------------------------------------------
+
 The project has the following things:-
 
 1. Authorization Service
